@@ -104,7 +104,7 @@ import Vue from 'vue'
                 <span slot="title">基本信息查询</span>
                 <!-- <el-menu-item index="managerTable">111</el-menu-item> -->
                 <el-menu-item index="/home/managerTable">管理员信息</el-menu-item>
-                <el-menu-item index="a">待开发1</el-menu-item>
+                <el-menu-item index="a">待开发11</el-menu-item>
               </el-menu-item-group>
               <el-menu-item-group title="学校图片管理">
                 <el-menu-item index="4-4">待开发</el-menu-item>
@@ -120,7 +120,7 @@ import Vue from 'vue'
             <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
             <el-breadcrumb-item>
               <a href="../">返回上一级</a>
-            </el-breadcrumb-item> 
+            </el-breadcrumb-item>
             <el-breadcrumb-item>活动列表</el-breadcrumb-item>
             <el-breadcrumb-item>活动详情</el-breadcrumb-item>
           </el-breadcrumb>-->
