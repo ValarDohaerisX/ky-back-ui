@@ -11,10 +11,16 @@ const a = resolve => require(['@/views/manager/a'], resolve);
 
 const managerTable = resolve => require(['@/views/manager/managerTable'], resolve);
 
-const courseTable = resolve => require(['@/views/school/courseTable'], resolve);
+const courseTable = resolve => require(['@/views/course/courseTable'], resolve);
 
-const secondCourseTable = resolve => require(['@/views/school/secondCourseTable'], resolve);
+const secondCourseTable = resolve => require(['@/views/course/secondCourseTable'], resolve);
 // const managerTable = resolve => require(['@/views/manager/managerTable'], resolve);
+
+const schoolBasicInfoTable = resolve => require(['@/views/school/schoolBasicInfoTable'], resolve);
+
+const schoolDetailTable = resolve => require(['@/views/school/schoolDetailTable'], resolve);
+
+const majorTable = resolve => require(['@/views/course/majorTable'], resolve);
 
 Vue.use(VueRouter)
 
@@ -51,9 +57,23 @@ var router = new VueRouter({
           component: managerTable,
         },
         {
-          path: '/a',
-          name: '待开发1',
-          component: a
+          path: '/home/schoolBasicInfo',
+          name: '学校基本信息录入',
+          component: schoolBasicInfoTable
+        },
+        {
+          path: '/home/schoolDetailInfo',
+          name: '学校明细信息录入',
+          component: schoolDetailTable,
+          meta: {
+             keepAlive: false, //此组件不需要被缓存
+             isBack: false, //用于判断上一个页面是哪个
+            }
+        },
+        {
+          path: '/home/majorTable',
+          name: '专业录入',
+          component: majorTable
         }
       ]
     }

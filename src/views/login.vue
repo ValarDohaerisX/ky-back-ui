@@ -239,7 +239,7 @@ export default {
   margin: 120px auto;
   padding: 50px 55px 15px 50px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
-  background-color: lightgoldenrodyellow;
+  background-color: rgb(248, 248, 241);
   border-radius: 2px;
   opacity: 0.8;
   font-family: Hiragino Sans GB;

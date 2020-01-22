@@ -12,9 +12,9 @@ import Vue from 'vue'
     >
       <el-table-column type="selection" width="100%"></el-table-column>
       <el-table-column type="index" label="序号" width="100%"></el-table-column>
-      <el-table-column label="Id" prop="id" width="100%"></el-table-column>
-      <el-table-column label="学科代码" prop="code" width="100%"></el-table-column>
-      <el-table-column label="学科门类" prop="name" width="100%" ></el-table-column>
+      <el-table-column label="Id" prop="firstCourseNo" width="100%"></el-table-column>
+      <el-table-column label="学科代码" prop="firstCourseCode" width="100%"></el-table-column>
+      <el-table-column label="学科门类" prop="firstCourseName" width="100%" ></el-table-column>
       <!-- <el-table-column width="100%">
         
       </el-table-column> -->
@@ -132,23 +132,23 @@ export default {
       pemissionRadioGroup: 1,
       firstCourseInfo: [
         {
-          id:0,
-          code: "",
-          name: ""
+          firstCourseNo:0,
+          firstCourseCode: "",
+          firstCourseName: ""
         }
       ],
       tableDataTempStore: [
         {
-          id:0,
-          code: "",
-          name: ""
+          firstCourseNo:0,
+          firstCourseCode: "",
+          firstCourseName: ""
         }
       ],
       tableData: [
         {
-          id:0,
-          code: "",
-          name: ""
+          firstCourseNo:0,
+          firstCourseCode: "",
+          firstCourseName: ""
         }
       ],
       user:[],
@@ -168,11 +168,11 @@ export default {
 
       // 表单验证，需要在 el-form-item 元素中增加 prop 属性
       rules: {
-        code: [
+        firstCourseCode: [
           { required: true, message: "学科代码最少为1个字符", trigger: "blur" },
           { min: 1, max: 11, message: "学科代码最长11个字符", trigger: "blur" }
         ],
-        name: [
+        firstCourseName: [
           { required: true, message: "学科门类最少为2个字符", trigger: "blur" },
           {
             min: 2,
@@ -218,10 +218,11 @@ export default {
     },
     viewSecondCourseButton(index, row){
       console.log("index:"+index);
-      console.log("row.id:"+row.id);
-      console.log("row.name:"+row.name);
-      console.log("row.code:"+row.code);
-      this.$router.push({path:'/home/secondCourseTable',query:{id:row.id,code:row.code,name:row.name}});
+      console.log("row.id:"+row.firstCourseNo);
+      console.log("row.name:"+row.firstCourseName);
+      console.log("row.code:"+row.firstCourseCode);
+      this.$message.success("id:"+row.firstCourseNo+"\ncode:"+row.firstCourseCode+"\nname:"+row.firstCourseName);
+      this.$router.push({path:'/home/secondCourseTable',query:{firstCourseNo:row.firstCourseNo,firstCourseCode:row.firstCourseCode,firstCourseName:row.firstCourseName}});
     },
     handleSizeChange(val) {
       this.pageSize = val;
@@ -270,7 +271,7 @@ export default {
         center: true
       })
         .then(() => {
-          deleteFirstCourse(row.id).then(result => {
+          deleteFirstCourse(row.firstCourseNo).then(result => {
             var code = result.returnCode.code;
             var desc = result.returnCode.desc;
             var body = result.body;
@@ -326,8 +327,8 @@ export default {
           console.log("json-->" + json);
 
           var firstCourseParams = {
-            code: this.firstCourseInfo.code,
-            name: this.firstCourseInfo.name
+            code: this.firstCourseInfo.firstCourseCode,
+            name: this.firstCourseInfo.firstCourseName
           };
           addFirstCourse(firstCourseParams).then(
             result => {
@@ -357,6 +358,8 @@ export default {
                 this.$router.push("/home/courseTable");
               } else if (code === 1003) {
                 this.$message.error(desc);
+                this.opName = '';
+                this.opType = '';
                 this.$refs.firstCourseInfo.resetFields();
                 this.$router.push("/home/courseTable");
               } else {
@@ -364,6 +367,8 @@ export default {
                   message: desc,
                   type: "warning"
                 });
+                this.opName = '';
+                this.opType = '';
                 this.$refs.firstCourseInfo.resetFields();
               }
             },
@@ -391,7 +396,7 @@ export default {
       //   this.password = row.password;
       //   this.manaPemission = row.manaPemission;
       this.dialogFormVisible = true;
-      this.opName = "修改"+row.name+"学科门类信息";
+      this.opName = "修改 ["+row.firstCourseName+"] 学科门类信息";
       let _row = row;
       this.indexId = index;
       this.opType = 'update';
