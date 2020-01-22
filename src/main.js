@@ -3,8 +3,10 @@ import Vue from 'vue'
 import App from './App'
 
 import ElementUI from 'element-ui'
+// 引入返回顶部组件
+import ElBacktop from 'element-ui';
 
-import 'element-ui/lib/theme-chalk/index.css'
+import  'element-ui/lib/theme-chalk/index.css'
 
 import router from './router/router.js'
 
@@ -30,6 +32,8 @@ Vue.use(VueResource)
 // Vue.http.options.root = 'http://localhost:8080/'
 // 全局启用 emulateJSON 选项:如果Web服务器无法处理编码为application/json的请求，你可以启用emulateJSON选项。
 // Vue.http.options.emulateJSON = true
+
+Vue.use(ElBacktop)
 
 Vue.config.productionTip = false
 
