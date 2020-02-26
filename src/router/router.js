@@ -20,6 +20,9 @@ const schoolBasicInfoTable = resolve => require(['@/views/school/schoolBasicInfo
 
 const schoolDetailTable = resolve => require(['@/views/school/schoolDetailTable'], resolve);
 
+const schoolBasicInfoTableTest = resolve => require(['@/views/school/schoolBasicInfoTableTest'], resolve);
+
+
 const majorTable = resolve => require(['@/views/course/majorTable'], resolve);
 
 Vue.use(VueRouter)
@@ -60,6 +63,11 @@ var router = new VueRouter({
           path: '/home/schoolBasicInfo',
           name: '学校基本信息录入',
           component: schoolBasicInfoTable
+        },
+        {
+          path: '/home/schoolBasicInfoTest',
+          name: '学校基本信息录入测试',
+          component: schoolBasicInfoTableTest
         },
         {
           path: '/home/schoolDetailInfo',

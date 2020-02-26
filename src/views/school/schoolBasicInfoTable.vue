@@ -403,7 +403,7 @@ export default {
           }
         },
         error => {
-          console.log("reusult2-->" + result);
+          // console.log("reusult2-->" + result);
         }
       );
     },

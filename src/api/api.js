@@ -59,7 +59,7 @@ export const getAllSchoolList = params => { return axios.get('/school/getAll', p
 
 export const getSchoolDetailInfo = params => { return axios.get('/school/getSchoolDetailInfo?schoolNo=' + params).then(res => res.data) }
 
-
+export const setSchoolDetailInfo = params => { return axios.post('/school/setSchoolDetailInfo',params).then(res => res.data) }
 
 
 

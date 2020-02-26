@@ -49,6 +49,7 @@ import Vue from 'vue'
               <el-menu-item-group>
                 <span slot="title">目标院校基本信息</span>
                 <el-menu-item index="/home/schoolBasicInfo">基本信息录入</el-menu-item>
+                <el-menu-item index="/home/schoolBasicInfoTest">基本信息录入测试+++++++</el-menu-item>
                 <el-menu-item index="/home/schoolDetailInfo">明细信息处理</el-menu-item>
               </el-menu-item-group>
               <el-menu-item-group>
@@ -172,8 +173,8 @@ import { exitMana } from "../api/api";
 export default {
   data() {
     return {
-      // isCollapse: true,
-      isCollapse: '',
+      isCollapse: false,
+      // isCollapse: '',
       // tableData: Array(20).fill(item),
       menuData: [],
       user: [{}],
