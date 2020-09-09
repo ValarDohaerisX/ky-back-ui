@@ -40,35 +40,35 @@ import Vue from 'vue'
   export default {
     data() {
       return {
-        data01: {
-           Content:{
-                MDM017402:{
-                    "MROCardCode":"",
-					"MROCardName":"",					
-					"DZCardCode":"",
-					"DZCardName":"",
-					"MROAmount":'',
-					"DZAmount":''
-                }
-            }
-        },
+        // data01: {
+        //    Content:{
+        //         MDM017402:{
+        //             "MROCardCode":"",
+		// 			"MROCardName":"",					
+		// 			"DZCardCode":"",
+		// 			"DZCardName":"",
+		// 			"MROAmount":'',
+		// 			"DZAmount":''
+        //         }
+        //     }
+        // },
         
       };
     },
-    methods: {
-      AddListRow() {
-				this.data01.Content.MDM017402.push({
-					"MROCardCode":"",
-					"MROCardName":"",					
-					"DZCardCode":"",
-					"DZCardName":"",
-					"MROAmount":'',
-					"DZAmount":''
-				});
-            },
-            handleDelete(index) {
-				this.data01.Content.MDM017402.splice(index, 1);
-			}, 
-    }
+    // methods: {
+    //   AddListRow() {
+	// 			this.data01.Content.MDM017402.push({
+	// 				"MROCardCode":"",
+	// 				"MROCardName":"",					
+	// 				"DZCardCode":"",
+	// 				"DZCardName":"",
+	// 				"MROAmount":'',
+	// 				"DZAmount":''
+	// 			});
+    //         },
+    //         handleDelete(index) {
+	// 			this.data01.Content.MDM017402.splice(index, 1);
+	// 		}, 
+    // }
   }
 </script>

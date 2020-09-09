@@ -4,7 +4,7 @@ import Vue from 'vue'
     <!--margin-bottom: 20px;margin-left: 10px;-->
     <!--style="background-color: rgb(238, 241, 246)"-->
     <!--style="height: 500px;"-->
-    <el-container style="height: 590px">
+    <el-container style="height:100vh;">
       <el-scrollbar>
         <el-aside width="230px">
           <el-radio-group v-model="isCollapse" style="margin: 2px 0px 5px 5px">

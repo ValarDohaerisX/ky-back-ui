@@ -12,14 +12,14 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
 		'/api/': {    // api为代理接口
-          target: 'http://localhost:8080/',    // 这里我代理到本地服务
+          target: 'http://localhost:8088/',    // 这里我代理到本地服务
           changeOrigin: true
      }
 	},
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
-    port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    port: 8088, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,
     notifyOnErrors: true,
